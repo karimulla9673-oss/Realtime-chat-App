@@ -6,7 +6,8 @@ const connectDB = require('./config/database');
 
 
 
-const webSocketController = require('./controllers/webSocketController');
+const webSocketController = require('./controllers/websocketController');
+
 
 const app = express();
 const server = http.createServer(app);
