@@ -21,7 +21,7 @@ const useWebSocket = () => {
   } = useChatContext();
 
   // ✅ Get WebSocket URL with proper fallback
-  const WS_URL = process.env.REACT_APP_WS_URL || 'ws://localhost:8000';
+  const WS_URL = process.env.REACT_APP_WS_URL || 'https://realtime-chat-app-1-sjoa.onrender.com';
 
   // ✅ Memoize the message handler to prevent recreating it
   const handleMessage = useCallback((event) => {
