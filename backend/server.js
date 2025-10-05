@@ -13,8 +13,22 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+
+const corsOptions = {
+    origin: [
+         // For local development
+        'https://realtime-chat-app-2-8dei.onrender.com', // Your deployed frontend
+        // Add any other frontend URLs you might have
+    ],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
+
 // Middleware
-app.use(cors());
+
 app.use(express.json());
 
 // Connect to MongoDB
